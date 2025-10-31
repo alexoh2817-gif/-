@@ -207,8 +207,8 @@ st.write(styled.to_html(escape=False, index=False), unsafe_allow_html=True)
 # 다운로드(백업)
 st.download_button(
     "📥 현재 현황 CSV 다운로드",
-    data=df[["학번","이름","출석여부","입장시간"]].to_csv(index=False).encode("utf-8-sig"),
-    file_name=f"{part}_출석현황.csv",
+    data=df[["학번","이름","입장 여부","입장 시간"]].to_csv(index=False).encode("utf-8-sig"),
+    file_name=f"{part}_입장현황.csv",
     type="secondary"
 )
 
@@ -224,5 +224,6 @@ with st.expander("🛠️ 관리자"):
             st.success("초기화 완료")
         else:
             st.error("비밀번호 불일치")
+
 
 
