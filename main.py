@@ -116,7 +116,7 @@ st.markdown(f"""
   <div class="header-emoji">🧸</div>
   <div>
     <h2>입장 체크 시스템 <small style="opacity:.7">({part})</small></h2>
-    <div style="opacity:.7">학번 또는 이름 입력 → 즉시 입장장</div>
+    <div style="opacity:.7">학번 또는 이름 입력 → 즉시 입장</div>
   </div>
 </div>
 """, unsafe_allow_html=True)
@@ -160,7 +160,7 @@ with st.form("checkin_form", clear_on_submit=True):
     st.markdown('<div class="big-input">', unsafe_allow_html=True)
     user_input = st.text_input("학번 또는 이름 입력", value="", help="학번 또는 이름 입력 후 Enter")
     st.markdown('</div>', unsafe_allow_html=True)
-    submitted = st.form_submit_button("입장장하기")
+    submitted = st.form_submit_button("입장하기")
 
     if submitted:
         keyword = str(user_input).strip()
@@ -224,4 +224,5 @@ with st.expander("🛠️ 관리자"):
             st.success("초기화 완료")
         else:
             st.error("비밀번호 불일치")
+
 
